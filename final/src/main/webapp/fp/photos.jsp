@@ -9,20 +9,15 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
   <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css"type="text/css" >
-
   <link rel="stylesheet" href="css/lightgallery.min.css"type="text/css" >    
-
   <link rel="stylesheet" href="css/bootstrap-datepicker.css"type="text/css" >
-
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"type="text/css" >
   <link rel="stylesheet" href="css/swiper.css" type="text/css">
-
   <link rel="stylesheet" href="css/aos.css" type="text/css">
 
   <link rel="stylesheet" href="css/style.css"type="text/css" >
