@@ -10,9 +10,6 @@
 	<context:component-scan
 		base-package="bb.project.* " />
 
-
-
-
 	<mvc:annotation-driven />
 
 	<mvc:default-servlet-handler />

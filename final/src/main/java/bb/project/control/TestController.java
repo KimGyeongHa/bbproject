@@ -10,7 +10,9 @@ public class TestController {
 	public String test() {
 		return "test";
 	}
-	
 
-	
+	@RequestMapping("/photos")
+	public String photos() {
+		return "photos";
+	}
 }
