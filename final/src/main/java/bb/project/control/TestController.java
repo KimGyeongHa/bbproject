@@ -40,6 +40,40 @@ public class TestController {
 		ms.addmember(dto);
 		return "redirect:/photos";
 	}
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
 	
-	
+	@RequestMapping("/session")
+	public String session() {
+		return "session";
+	}
+	@RequestMapping("/spring")
+	public String spring() {
+		return "spring";
+	}
+	@RequestMapping("/summer")
+	public String summer() {
+		return "summer";
+	}
+	@RequestMapping("/fall")
+	public String fall() {
+		return "fall";
+	}
+	@RequestMapping("/winter")
+	public String winter() {
+		return "winter";
+	}
+	@RequestMapping("/recommended")
+	public String recommended() {
+		return "recommended";
+	}
+	@RequestMapping("/best10")
+	public String best10() {
+		return "best10";
+	}
 }
+	
+	
+
