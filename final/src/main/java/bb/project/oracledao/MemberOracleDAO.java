@@ -8,7 +8,7 @@ import bb.project.dao.MemberDAO;
 import bb.project.dto.MemberDTO;
 import lombok.Setter;
 
-@Repository
+@Repository("mdao")
 @Setter
 public class MemberOracleDAO implements MemberDAO {
 
@@ -22,14 +22,17 @@ public class MemberOracleDAO implements MemberDAO {
 
 	@Override
 	public void updateOne(MemberDTO dto) {
-		// TODO Auto-generated method stub
+		ss.update("bb.project.dao.MemberDAO.updateOne",dto);
 		
 	}
 
 	@Override
-	public void deleteOne(int mno) {
-		// TODO Auto-generated method stub
+	public void deleteOne(String id) {
+		ss.delete("bb.project.dao.MemberDAO.deleteOne",id);
+		
+		
 		
 	}
+
 
 }

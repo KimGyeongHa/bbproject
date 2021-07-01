@@ -11,7 +11,17 @@
 		INSERT INTO member
 		VALUES(MEMBER_ADD.NEXTVAL, #{id},#{pw},#{name},#{birth},#{pn} ,#{nickname})
 	</insert> 
+ 	
+ 	<update id="updateOne" parameterMap="mdto">
+ 		UPDATE member
+ 		SET pw=#{pw},name=#{name},pn=#{pn},#{nickname}
+ 		WHERE id=#{id}
+ 	</update>
  
- 
+ 	<delete id="deleteOne" parameterMap="mdto">
+ 		DELETE member
+ 		WHERE id=#{id}
+ 	
+ 	</delete>
  
  </mapper> 

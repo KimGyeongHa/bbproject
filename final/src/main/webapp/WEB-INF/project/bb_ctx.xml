@@ -20,13 +20,13 @@
 	<property name="dataSource" ref="dataSource"></property>
 	
 	<!-- mapper의 위치 -->
-	<property name="configLocation" value="/WEB-INF/sqlMapConfig.xml"></property>
-	<property name="mapperLocations" value="/WEB-INF/memberMapper.xml"></property>
+	<property name="configLocation" value="/WEB-INF/project/sqlMapConfig.xml"></property>
+     <property name="mapperLocations" value="/WEB-INF/mapper/*.xml"></property>
 </bean>
-
 
 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 	<constructor-arg ref="factory" />
 </bean>
+
 
 </beans>

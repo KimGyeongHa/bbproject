@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>	
-	<form action="addmember" method="post">
+	<form action="addmember" method="post" >
 	<table>
 		<tr>
 			<th>아이디</th>
@@ -39,6 +39,31 @@
 		<th>닉네임</th>
 		<td><input type="text" name="nickname" /></td>
 	</tr>
+	
+	<tr>
+		<th>주소</th>
+		<td><input type="text" name="addrs"  /></td>
+	</tr>
+	
+	<tr>
+		<th>이메일</th>
+		<td><input type="text" name="email" /></td>
+	</tr>
+	
+	<tr>
+		<th>성별</th>
+		<td><input type="text" name="gender" /></td>
+	</tr>
+	
+	<tr>
+		<th>결혼여부</th>
+		<td><input type="text" name="marr" /></td>
+	</tr>
+	
+	<tr>
+		<th>자녀</th>
+		<td><input type="text" name="chi" /></td>
+	</tr> 
 	
 	<tr>
 		<td colspan="2">

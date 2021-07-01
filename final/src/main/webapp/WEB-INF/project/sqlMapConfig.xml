@@ -6,6 +6,6 @@
   <configuration>
   	<typeAliases>
   		<typeAlias type="bb.project.dto.MemberDTO" alias="mdto"/>
-
+		<typeAlias type="bb.project.dto.MemberDetailDTO" alias="mdtod"/>
   	</typeAliases>
   </configuration>

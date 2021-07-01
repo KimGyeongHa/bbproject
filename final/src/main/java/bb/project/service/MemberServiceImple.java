@@ -1,6 +1,7 @@
 package bb.project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import bb.project.dao.MemberDAO;
@@ -12,6 +13,7 @@ import lombok.Setter;
 public class MemberServiceImple implements MemberService{
 
 	@Autowired
+	@Qualifier("mdao")
 	MemberDAO dao;
 	
 	@Override
@@ -21,14 +23,14 @@ public class MemberServiceImple implements MemberService{
 	}
 
 	@Override
-	public void deletemember(int mno) {
-		// TODO Auto-generated method stub
+	public void deletemember(String id) {
+		dao.deleteOne(id);
 		
 	}
 
 	@Override
 	public void updatemember(MemberDTO dto) {
-		// TODO Auto-generated method stub
+		dao.updateOne(dto);
 		
 	}
 

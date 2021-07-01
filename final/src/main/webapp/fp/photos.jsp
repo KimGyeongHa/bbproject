@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +29,13 @@
 
 </head>
 <body>
+		<sec:authorize access="isAuthenticated()">
+			<a href="<c:url value='/fp/Logout' />">커스텀 로그아웃</a>
+			<a href="<c:url value='/logout '/>">기본값 로그아웃</a>
+		</sec:authorize>
+		<c:url value="/fp/Logout" />
+
+
 
   <div class="site-wrap">
 
