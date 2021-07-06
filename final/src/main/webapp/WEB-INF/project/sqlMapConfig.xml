@@ -7,5 +7,9 @@
   	<typeAliases>
   		<typeAlias type="bb.project.dto.MemberDTO" alias="mdto"/>
 		<typeAlias type="bb.project.dto.MemberDetailDTO" alias="mdtod"/>
+		<typeAlias type="bb.project.dto.MemberAUTHDTO" alias="authdto"/>
+		<typeAlias type="bb.project.dto.TrinfoDTO" alias="trdto"/>
+		<typeAlias type="bb.project.dto.TrinfoDetailDTO" alias="trdedto"/>
+		<typeAlias type="bb.project.dto.MemCommDTO" alias="mcdto"/>
   	</typeAliases>
   </configuration>

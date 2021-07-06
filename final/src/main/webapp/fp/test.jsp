@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>하이 에이치아이</h1>
+	<a href="/final/photos">메인페이지 이동</a>
+	
 </body>
 </html>

@@ -14,7 +14,7 @@ import lombok.Setter;
 public class MemberDetailOracelDAO implements MemberDetailDAO {
 
 	@Autowired
-	SqlSession ss;
+	private SqlSession ss;
 	
 
 	@Override

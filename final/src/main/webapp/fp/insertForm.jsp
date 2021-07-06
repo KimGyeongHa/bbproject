@@ -64,7 +64,10 @@
 		<th>자녀</th>
 		<td><input type="text" name="chi" /></td>
 	</tr> 
-	
+	<tr>
+	<td><input type="hidden" name="${_csrf.parameterName }"
+			value="${_csrf.token }" /></td>
+	</tr>
 	<tr>
 		<td colspan="2">
 			<input type="button" value="목록" />

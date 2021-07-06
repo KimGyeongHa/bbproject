@@ -3,24 +3,33 @@ package bb.project.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import bb.project.dao.TrinfoDAO;
 import bb.project.dto.TrinfoDTO;
+import lombok.Setter;
 
+
+@Service
+@Setter
 public class TrinfoServiceImple implements TrinfoService {
 
+	@Qualifier("trinfo")
 	@Autowired
 	TrinfoDAO dao;
 	
 	@Override
 	public ArrayList<TrinfoDTO> readAll(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ArrayList<TrinfoDTO> list = dao.selectAll(bno);
+		
+		return list;
 	}
 
 	@Override
 	public void update(TrinfoDTO dto) {
-		// TODO Auto-generated method stub
+		dao.updateOne(dto);
 		
 	}
 
@@ -32,13 +41,13 @@ public class TrinfoServiceImple implements TrinfoService {
 
 	@Override
 	public void delete(int bno) {
-		// TODO Auto-generated method stub
+		dao.deleteOne(bno);
 		
 	}
 
 	@Override
 	public void uphits(int bno) {
-		// TODO Auto-generated method stub
+		dao.updatehits(bno);
 		
 	}
 

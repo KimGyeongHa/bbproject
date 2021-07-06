@@ -9,16 +9,16 @@
 	
 	<insert id="insertOne" parameterType="mdto">
 		INSERT INTO member
-		VALUES(MEMBER_ADD.NEXTVAL, #{id},#{pw},#{name},#{birth},#{pn} ,#{nickname})
+		VALUES(MEMBER_ADD.NEXTVAL, #{id},#{pw},#{name},#{birth},#{pn} ,#{nickname},'1')
 	</insert> 
  	
- 	<update id="updateOne" parameterMap="mdto">
+ 	<update id="updateOne" parameterType="mdto">
  		UPDATE member
  		SET pw=#{pw},name=#{name},pn=#{pn},#{nickname}
  		WHERE id=#{id}
  	</update>
  
- 	<delete id="deleteOne" parameterMap="mdto">
+ 	<delete id="deleteOne" parameterType="mdto">
  		DELETE member
  		WHERE id=#{id}
  	

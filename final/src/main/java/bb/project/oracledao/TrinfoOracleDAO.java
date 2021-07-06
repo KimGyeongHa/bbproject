@@ -10,46 +10,47 @@ import bb.project.dao.TrinfoDAO;
 import bb.project.dto.TrinfoDTO;
 import lombok.Setter;
 
-@Repository
+@Repository("trinfo")
 @Setter
 public class TrinfoOracleDAO implements TrinfoDAO {
 
 	@Autowired
-	SqlSession ss;
+	private SqlSession ss;
 	
 	@Override
 	public void selectOne(int bno) {
-		// TODO Auto-generated method stub
-		ss.selectOne("bb.project.dao.TrinfoDAO.insertOne");
+		
+		ss.selectOne("bb.project.dao.TrinfoDAO.selectOne",bno);
 	}
 
 	@Override
 	public void insertOne(TrinfoDTO dto) {
-		// TODO Auto-generated method stub
+		ss.insert("bb.project.dao.TrinfoDAO.insertOne", dto);
 		
 	}
 
 	@Override
 	public void updateOne(TrinfoDTO dto) {
-		// TODO Auto-generated method stub
+		ss.update("bb.project.dao.TrinfoDAO.updateOne", dto);
 		
 	}
 
 	@Override
 	public void deleteOne(int bno) {
-		// TODO Auto-generated method stub
+		ss.delete("bb.project.dao.TrinfoDAO.deleteOne",bno);
 		
 	}
 
 	@Override
 	public ArrayList<TrinfoDTO> selectAll(int bno) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<TrinfoDTO> list = new ArrayList<TrinfoDTO>();
+		ss.selectList("bb.project.dao.TrinfoDAO.selectAll", bno);
+		return list;
 	}
 
 	@Override
 	public void updatehits(int bno) {
-		// TODO Auto-generated method stub
+		ss.update("bb.project.dao.TrinfoDAO.updatehits",bno);
 		
 	}
 

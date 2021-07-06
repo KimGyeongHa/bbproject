@@ -9,10 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>커스텀 로그아웃</h1>
-	<c:url value="/logout" />
 	
-	<form action="<c:url value='/fp/Logout' />" method="post">
+	
+	
+	
+	<form action="<c:url value='/Logout' />" method="post">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 		<input type="submit" value="로그아웃" />	
 	</form>

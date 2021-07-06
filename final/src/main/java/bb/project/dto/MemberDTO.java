@@ -9,6 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
 public class MemberDTO {
 	private int mno;
 	private String id;
@@ -17,5 +18,6 @@ public class MemberDTO {
 	private String birth;
 	private String pn;
 	private String nickname;
+	
 	
 }

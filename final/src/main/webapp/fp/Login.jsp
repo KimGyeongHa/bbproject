@@ -11,24 +11,22 @@
 </head>
 <body>
 	
-	<h1>사용자 정의형 로그인 페이지</h1>
 
 	<h2><c:url value="${error }"></c:url></h2>	
-	<h2><c:url value="${logout }"></c:url></h2>
+
 	
-	<!-- spring security : CSRF 공격을 막기위해 랜덤토큰 인증방식을제공 -->
 	
 	
 	<form action="<c:url value='/login' />" method="post">
 	<table>
 		<tr>
 			<th>아이디</th>
-			<td><input type="text" name="id" id="" /></td>
+			<td><input type="text" name="username" id="" /></td>
 		</tr>
 		
 		<tr>
 			<th>패스워드</th>
-			<td><input type="text" name="pw" id="" />
+			<td><input type="text" name="password" id="" />
 			
 			<input type="hidden" name="${_csrf.parameterName }"
 			value="${_csrf.token }" />

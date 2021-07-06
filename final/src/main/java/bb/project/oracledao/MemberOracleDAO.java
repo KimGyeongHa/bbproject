@@ -2,6 +2,7 @@ package bb.project.oracledao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import bb.project.dao.MemberDAO;
@@ -11,14 +12,13 @@ import lombok.Setter;
 @Repository("mdao")
 @Setter
 public class MemberOracleDAO implements MemberDAO {
-
-	@Autowired
-	SqlSession ss;
 	
-	@Override
-	public void insertOne(MemberDTO dto) {
-		ss.insert("bb.project.dao.MemberDAO.insertOne",dto);
-	}
+	BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
+	
+	@Autowired
+	private SqlSession ss;
+	
+	
 
 	@Override
 	public void updateOne(MemberDTO dto) {
@@ -31,6 +31,14 @@ public class MemberOracleDAO implements MemberDAO {
 		ss.delete("bb.project.dao.MemberDAO.deleteOne",id);
 		
 		
+		
+	}
+
+	@Override
+	public void insertOne(MemberDTO dto){
+		
+	
+		ss.insert("bb.project.dao.MemberDAO.insertOne",dto);
 		
 	}
 

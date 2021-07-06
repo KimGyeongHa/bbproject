@@ -30,10 +30,10 @@
 </head>
 <body>
 		<sec:authorize access="isAuthenticated()">
-			<a href="<c:url value='/fp/Logout' />">커스텀 로그아웃</a>
+			<a href="<c:url value='/common/customLogout' />">커스텀 로그아웃</a>
 			<a href="<c:url value='/logout '/>">기본값 로그아웃</a>
 		</sec:authorize>
-		<c:url value="/fp/Logout" />
+		<c:url value="/common/customLogout" />
 
 
 
