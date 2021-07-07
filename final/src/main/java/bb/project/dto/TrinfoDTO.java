@@ -22,7 +22,7 @@ public class TrinfoDTO {
 	private String hp;
 	private String time;
 	private String trimg;
-	private String mno;
+	private int mno;
 	private int hits;
 
 }

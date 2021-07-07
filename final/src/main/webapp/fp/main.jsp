@@ -29,6 +29,8 @@
 </head>
 <body>
 		<h2><c:url value="${logout }"></c:url></h2>	
+	
+		
 		
 		<sec:authorize access="isAuthenticated()">
 				<form action="<c:url value='/Logout' />" method="post">
@@ -36,6 +38,12 @@
 		<input type="submit" value="로그아웃" />	
 			</form>
 		</sec:authorize>
+		
+		
+		<sec:authorize access="isAuthenticated()">
+			<td colspan="5"><a href="trinfotest">게시물등록하기</a></td>
+		</sec:authorize>
+		
 	
 	
 	

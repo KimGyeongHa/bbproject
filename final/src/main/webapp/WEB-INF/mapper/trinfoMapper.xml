@@ -8,7 +8,7 @@
 
 	<insert id="insertOne" parameterType="trdto">
 		INSERT INTO trinfo
-		VALUES (TRINFO_BNO_SEQ.NEXTVAL,#{type},#{loc},#{trtitle},#{adrs},#{trdetail},#{hp},#{time},#{trimg},TRINFO_MNO_SEQ.NEXTVAL,0)
+		VALUES (TRINFO_BNO_SEQ.NEXTVAL,#{type},#{loc},#{trtitle},#{adrs},#{trdetail},#{hp},#{time},#{trimg},#{mno},0)
 	</insert>
 
 	<select id="selectOne" parameterType="int" resultType="trdto">

@@ -7,9 +7,11 @@
  <mapper namespace="bb.project.dao.MemberDAO">
 	
 	
+	
+	
 	<insert id="insertOne" parameterType="mdto">
 		INSERT INTO member
-		VALUES(MEMBER_ADD.NEXTVAL, #{id},#{pw},#{name},#{birth},#{pn} ,#{nickname},'1')
+		VALUES(MEMBER_ADD_SEQ.NEXTVAL, #{id},#{pw},#{name},#{birth},#{pn} ,#{nickname},'1')
 	</insert> 
  	
  	<update id="updateOne" parameterType="mdto">

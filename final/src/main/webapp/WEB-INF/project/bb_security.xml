@@ -20,11 +20,12 @@
 
 	<security:http auto-config="true" use-expressions="true">
 		
-		<security:intercept-url pattern="/trinfotest" access="permitAll" />
 		<security:intercept-url pattern="/addmember"
 			access="permitAll" />
 		<security:intercept-url pattern="/main"
 			access="isAuthenticated()" />
+		<security:intercept-url pattern="/trinfotest" 
+			access="hasRole('ROLE_MEMBER')" />
 		<security:intercept-url pattern="/spring"
 			access="hasRole('ROLE_MEMBER')" />
 			

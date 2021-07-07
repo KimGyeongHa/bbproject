@@ -11,5 +11,7 @@
 		<typeAlias type="bb.project.dto.TrinfoDTO" alias="trdto"/>
 		<typeAlias type="bb.project.dto.TrinfoDetailDTO" alias="trdedto"/>
 		<typeAlias type="bb.project.dto.MemCommDTO" alias="mcdto"/>
+		<typeAlias type="bb.project.dto.CsDTO" alias="cdto"/>
+		<typeAlias type="bb.project.dto.PageNum" alias="pgn"/>
   	</typeAliases>
   </configuration>

@@ -14,7 +14,7 @@ public class CsDTO {
 	private int csno;
 	private int mno;
 	private String cstitle;
-	private String cscontets;
+	private String cscontents;
 	private String csrepdate;
 	private String csimg;
 	
