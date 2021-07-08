@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CommonController {
-	@RequestMapping("/fp/Login")
+	@RequestMapping("/final/Login")
 	public void login(String error,String logout,Model model) {
 		
 		if(error != null) {
@@ -15,7 +15,7 @@ public class CommonController {
 		model.addAttribute("logout","·Î±×¾Æ¿ôµÇ¼Ì½À´Ï´Ù.");
 	}
 		}
-	@RequestMapping("/fp/Logout")
+	@RequestMapping("/final/Logout")
 	public void logoutGet() {
 		System.out.println("Ä¿½ºÅÒ ·Î±×¾Æ¿ô");
 	}

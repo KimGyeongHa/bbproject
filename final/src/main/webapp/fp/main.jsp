@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> 
  
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>\
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
   <title>project.bb &mdash; </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,26 +32,9 @@
 
 </head>
 <body>
-		<h2><c:url value="${logout }"></c:url></h2>	
-	
-		
-		
-		<sec:authorize access="isAuthenticated()">
-				<form action="<c:url value='/Logout' />" method="post">
-		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
-		<input type="submit" value="로그아웃" />	
-			</form>
-		</sec:authorize>
-		
-		
-		<sec:authorize access="isAuthenticated()">
-			<td colspan="5"><a href="trinfotest">게시물등록하기</a></td>
-		</sec:authorize>
-		
 	
 	
-	
-	
+<h1>${dto.mno}</h1>
 	
   <div class="site-wrap">
 
@@ -66,7 +53,7 @@
     <header class="site-navbar py-3" role="banner">
 
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">
+            <h1 class="mb-0"><a href="main" class="text-white h2 mb-0">
             <img src="images/AHDD2.jpg" alt="" />
      		</a></h1>
           </div>
@@ -78,16 +65,16 @@
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" >
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="main">Home</a></li>
                 <li class="has-children">
                   <a href="single.html">Gallery</a>
                   <ul class="dropdown">
-                    <li><a href="#">Spring</a></li>
-                    <li><a href="#">Summer</a></li>
-                    <li><a href="#">Fall</a></li>
-                    <li><a href="#">Winter</a></li>
-                    <li><a href="#">Recommended Travel</a></li>
-                    <li><a href="#">Best10</a></li>
+                    <li><a href="spring">Spring</a></li>
+                    <li><a href="summer">Summer</a></li>
+                    <li><a href="fall">Fall</a></li>
+                    <li><a href="winter">Winter</a></li>
+                    <li><a href="recommended">Recommended Travel</a></li>
+                    <li><a href="best10">Best10</a></li>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -96,10 +83,35 @@
               </ul>
             </nav>
           </div>
-
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+	      <div class="col-6 col-xl-2" data-aos="fade-down">
+	    
+	    <!-- security 로그인시  --> 
+	      <h2><c:url value="${logout }"></c:url></h2>	
+		
+			<sec:authorize access="isAuthenticated()">
+			<form action="<c:url value='/Logout' />" method="post">
+			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+			<input type="submit" value="로그아웃" />	
+			</form>
+		</sec:authorize>
+		
+	
+		<sec:authorize access="isAuthenticated()">
+			<a href='<c:url value="/trinfotest" />' class="btn btn-outline-white py-2 px-4">게시물등록</a>
+			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+			
+		</sec:authorize>
+		
+		
+		<sec:authorize access="isAnonymous()">
+	     <a href='<c:url value="/Login" />' class="btn btn-outline-white py-2 px-4">LOGIN</a>
+	      <a href="addmember" class="btn btn-outline-white py-2 px-4">SIGN UP!</a>
+	      </sec:authorize>
+	      
+		  </div>	
+          <div class="col-6 col-xl-2 text-left" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
-              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-center mb-0" data-class="social">
                 <li>
                   <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                 </li>
@@ -132,7 +144,9 @@
 
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Spring</h2>
+              <h2 class="mb-3">
+              <a href="spring" class="text-white h2 mb-0">
+              Spring</h2>
               <a href="spring" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/spring.jpg" alt="Image" class="img-fluid">
@@ -142,8 +156,10 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Summer</h2>
-              <a href="single.html" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <h2 class="mb-3">
+              <a href="summer" class="text-white h2 mb-0">
+              Summer</h2>
+              <a href="summer" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/summer.jpg" alt="Image" class="img-fluid">
           </div>
@@ -151,8 +167,10 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Fall</h2>
-              <a href="single.html" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <h2 class="mb-3">
+              <a href="fall" class="text-white h2 mb-0">
+              Fall</h2>
+              <a href="fall" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/fall.jpg" alt="Image" class="img-fluid">
           </div>
@@ -161,8 +179,10 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Winter</h2>
-              <a href="single.html" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <h2 class="mb-3">
+              <a href="winter" class="text-white h2 mb-0">
+              Winter</h2>
+              <a href="winter" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/winter.jpg" alt="Image" class="img-fluid">
           </div>
@@ -171,21 +191,26 @@
         <div class="col-lg-4">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Recommended Travel</h2>
-              <a href="single.html" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <h2 class="mb-3">
+              <a href="recommended" class="text-white h2 mb-0">
+              Recommended Travel</h2>
+              <a href="recommended" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/travel.jpg" alt="Image" class="img-fluid">
           </div>
         </div>
 
         <div class="col-lg-4">
+              <a href="best10" class="text-white h2 mb-0">
           <div class="image-wrap-2">
             <div class="image-info">
-              <h2 class="mb-3">Best10</h2>
-              <a href="single.html" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <h2 class="mb-3">
+              Best10</h2>
+              <a href="best10" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/Best10.jpg" alt="Image" class="img-fluid">
           </div>
+          </a>
         </div>
 
       </div>

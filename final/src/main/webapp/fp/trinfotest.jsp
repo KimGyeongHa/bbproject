@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,8 @@
 
 	<h1>TRINFO INSERT TEST</h1>
 	<form:form method="post" action="trinfotest?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+		
+	
 		<table>
 			<tr>
 				<th>카테고리타입</th>
@@ -89,7 +93,7 @@
 				<td><input type="text" name="etc" value="엄청기네" /></td>
 			</tr>
 			<tr>
-			<td><input type="hidden" name="${mno }" value="" /></td>
+			<td><input type="hidden" value="${dto.mno}" name="mno" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="등록" /> <input

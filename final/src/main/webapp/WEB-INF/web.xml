@@ -78,6 +78,5 @@
 			/WEB-INF/project/bb_security.xml
 		</param-value>
 	</context-param>
-
-
+	
 </web-app>

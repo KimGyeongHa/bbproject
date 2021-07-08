@@ -9,5 +9,6 @@ public interface MemCommService {
 	public void updatecomm(MemCommDTO dto);
 	public void deletecomm(int bno);
 	public ArrayList<MemCommDTO> selectAll(int bno);
+	
 
 }

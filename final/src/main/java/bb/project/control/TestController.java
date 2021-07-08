@@ -2,6 +2,7 @@ package bb.project.control;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
@@ -76,12 +77,7 @@ public class TestController {
 		
 		String pwd = dto.getPw();
 		dto.setPw(pe.encode(pwd));
-		
-		/*
-		 * String id = dto.getId();
-		 * 
-		 * ms.getmno(id); dto.setMno(mno); dto1.setMno(mno);
-		 */
+	
 		
 		ms.addmember(dto);
 
@@ -99,6 +95,9 @@ public class TestController {
 	
 
 	  @RequestMapping("/Login") public String login() { 
+		 
+		 
+		  
 		  return"Login";
 		  }
 	 

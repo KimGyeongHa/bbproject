@@ -13,7 +13,6 @@ import lombok.Setter;
 @Setter
 public class MemberOracleDAO implements MemberDAO {
 	
-	BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
 	
 	@Autowired
 	private SqlSession ss;
@@ -42,7 +41,9 @@ public class MemberOracleDAO implements MemberDAO {
 		
 	}
 
-
+	public MemberDTO selectOne(String id) {
+		  return ss.selectOne("bb.project.dao.MemberDAO.selectOne", id);
+	}
 
 
 }

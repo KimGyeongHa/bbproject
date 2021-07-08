@@ -9,7 +9,7 @@
 
 	<insert id="insertOne" parameterType="mdtod">
  		INSERT INTO memberdetail
- 		VALUES (MEMBER_DETAIL_ADD_SEQ.NEXTVAL,#{addrs},#{email},#{gender},#{marr},#{chi})
+ 		VALUES (MEMBER_DETAIL_ADD_SEQ.NEXTVAL,#{addrs},#{email},#{gender},#{marr},#{chi},#{emaildetail1},#{emaildetail2})
  	
  	</insert>
  	

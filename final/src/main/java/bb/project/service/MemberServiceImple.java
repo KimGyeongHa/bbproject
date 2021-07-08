@@ -43,6 +43,12 @@ public class MemberServiceImple implements MemberService{
 		
 	}
 
+	@Override
+	public MemberDTO selectone(String id) {
+		return dao.selectOne(id);
+		
+	}
+
 
 	
 

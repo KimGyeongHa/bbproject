@@ -7,6 +7,11 @@
  <mapper namespace="bb.project.dao.MemberDAO">
 	
 	
+	<select id="selectOne" parameterType="String" resultType="mdto">
+		SELECT mno, id, pw , name, birth ,pn, nickname, enabled 
+		FROM member
+		WHERE id = #{id}
+	</select>
 	
 	
 	<insert id="insertOne" parameterType="mdto">
