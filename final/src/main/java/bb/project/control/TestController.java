@@ -41,82 +41,86 @@ import bb.project.service.MemberAUTHSERVICE;
 import bb.project.service.TrinfoService;
 import lombok.Setter;
 
-
 @Setter
 @Controller
 public class TestController {
-	
+
 	BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
-	
-	
+
 	@Autowired
 	MemberService ms;
 	@Autowired
 	MemberDetailService mds;
 	@Autowired
 	MemberAUTHSERVICE auth;
-	
-	
 
-	
 	@GetMapping("/addmember")
 	public String insert() {
 		return "insertForm";
 	}
-	
-	
+
 	@GetMapping("/test")
 	public String test1() {
 		return "test";
 	}
-	
+
 	@PostMapping("/addmember")
-	public String insert(@ModelAttribute MemberDTO dto,MemberDetailDTO dto1,MemberAUTHDTO dto2){
-		
-	
-		
+	public String insert(@ModelAttribute MemberDTO dto, MemberDetailDTO dto1, MemberAUTHDTO dto2) {
+
 		String pwd = dto.getPw();
 		dto.setPw(pe.encode(pwd));
-	
-		
+
 		ms.addmember(dto);
 
 		mds.addetc(dto1);
 		auth.addauto(dto2);
-		
-		
+
 		return "redirect:/main";
 	}
-	
+
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
 	}
-	
 
-	  @RequestMapping("/Login") public String login() { 
-		 
-		 
-		  
-		  return"Login";
-		  }
-	 
-	  @RequestMapping("/Logout") public String logout() {
-		  return "Logout";
-	  }
-	
-	  @RequestMapping("/spring")public String spring() {
-		  return "spring";
-	  }
+	@RequestMapping("/Login")
+	public String login() {
+		return "Login";
+	}
 
-	 
-	  
-	  
-	
-	  
-	
-	
+	@RequestMapping("/Logout")
+	public String logout() {
+		return "Logout";
+	}
+
+	@RequestMapping("/spring")
+	public String spring() {
+		return "spring";
+	}
+
+	@RequestMapping("/summer")
+	public String summer() {
+		return "summer";
+	}
+
+	@RequestMapping("/fall")
+	public String fall() {
+		return "fall";
+	}
+
+	@RequestMapping("/winter")
+	public String winter() {
+		return "winter";
+	}
+
+	@RequestMapping("/recommended")
+	public String recommended() {
+		return "recommended";
+	}
+
+	@RequestMapping("/best10")
+	public String best10() {
+		return "best10";
+	}
+
 }
-	
-	
-
