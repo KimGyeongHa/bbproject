@@ -103,9 +103,6 @@ public class TestController {
 		  return "Logout";
 	  }
 	
-	
-	  
-	  
 	  
 	  @RequestMapping("/spring")public String spring(Principal pc,HttpSession session,Model model, @RequestParam(name="currentPageNo",defaultValue="1")int currentPageNo) {
 
