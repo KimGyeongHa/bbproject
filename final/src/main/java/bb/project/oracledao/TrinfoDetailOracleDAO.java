@@ -40,7 +40,7 @@ public class TrinfoDetailOracleDAO implements TrinfoDetailDAO{
 	@Override
 	public ArrayList<TrinfoDetailDTO> selectAll(int bno) {
 		ArrayList<TrinfoDetailDTO> list =	new ArrayList<TrinfoDetailDTO>();
-		ss.selectList("bb.project.dao.TrinfoDetailDAO,selectAll",bno);
+		ss.selectList("bb.project.dao.TrinfoDetailDAO.selectAll",bno);
 		return list;
 	}
 

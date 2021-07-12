@@ -1,12 +1,14 @@
 package bb.project.oracledao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bb.project.dao.TrinfoDAO;
+import bb.project.dto.PageNum;
 import bb.project.dto.TrinfoDTO;
 import lombok.Setter;
 
@@ -18,9 +20,8 @@ public class TrinfoOracleDAO implements TrinfoDAO {
 	private SqlSession ss;
 	
 	@Override
-	public void selectOne(int bno) {
-		
-		ss.selectOne("bb.project.dao.TrinfoDAO.selectOne",bno);
+	public TrinfoDTO selectOne(String id) {
+		return ss.selectOne("bb.project.dao.TrinfoDAO.selectOne",id);
 	}
 
 	@Override
@@ -41,17 +42,28 @@ public class TrinfoOracleDAO implements TrinfoDAO {
 		
 	}
 
-	@Override
-	public ArrayList<TrinfoDTO> selectAll(int bno) {
-		ArrayList<TrinfoDTO> list = new ArrayList<TrinfoDTO>();
-		ss.selectList("bb.project.dao.TrinfoDAO.selectAll", bno);
-		return list;
-	}
 
 	@Override
 	public void updatehits(int bno) {
 		ss.update("bb.project.dao.TrinfoDAO.updatehits",bno);
 		
+	}
+
+	@Override
+	public List<TrinfoDTO> selectAll(int StartNum, int EndNum) {
+		PageNum pg = new PageNum(StartNum, EndNum);
+		return ss.selectList("bb.project.dao.TrinfoDAO.selecttrinfo",pg);
+	}
+
+	@Override
+	public int countAllData() {
+		return ss.selectOne("bb.project.dao.TrinfoDAO.getData");
+	}
+
+	@Override
+	public List<TrinfoDTO> selecttype(int type) {
+		
+		return ss.selectList("bb.project.dao.TrinfoDAO.selectAl",type);
 	}
 
 	

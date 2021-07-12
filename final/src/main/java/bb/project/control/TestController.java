@@ -3,6 +3,7 @@ package bb.project.control;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
@@ -31,6 +32,7 @@ import org.springframework.web.servlet.ModelAndView;
 import bb.project.dao.TrinfoDAO;
 import bb.project.dto.MemberDTO;
 import bb.project.dto.MemberDetailDTO;
+import bb.project.dto.CsDTO;
 import bb.project.dto.MemberAUTHDTO;
 import bb.project.dto.TrinfoDTO;
 import bb.project.dto.TrinfoDetailDTO;
@@ -55,9 +57,9 @@ public class TestController {
 	MemberDetailService mds;
 	@Autowired
 	MemberAUTHSERVICE auth;
+	@Autowired
+	TrinfoService tfs;
 	
-	
-
 	
 	@GetMapping("/addmember")
 	public String insert() {
@@ -90,14 +92,15 @@ public class TestController {
 	
 	@RequestMapping("/main")
 	public String main() {
+
+		
+	
 		return "main";
 	}
 	
 
 	  @RequestMapping("/Login") public String login() { 
-		 
-		 
-		  
+
 		  return"Login";
 		  }
 	 
@@ -105,12 +108,40 @@ public class TestController {
 		  return "Logout";
 	  }
 	
-	  @RequestMapping("/spring")public String spring() {
-		  return "spring";
-	  }
+	
+	  
+	  
+	  
+	  @RequestMapping("/spring")public String spring(Principal pc,HttpSession session,Model model, @RequestParam(name="currentPageNo",defaultValue="1")int currentPageNo) {
+
+
+			
+		int type = 1;
+		
+		List<TrinfoDTO> list= tfs.selectAll(type);
+
+		model.addAttribute("list",list);
+		return "spring";
+		
+		
+	}
+	
+		
+	
 
 	 
-	  
+	  @RequestMapping("/summer")public String summer(Principal pc,HttpSession session,Model model) {
+
+		  
+			int type = 2;
+			
+			List<TrinfoDTO> list= tfs.selectAll(type);
+
+			model.addAttribute("list",list);
+			return "spring";
+			
+		  }
+
 	  
 	
 	  

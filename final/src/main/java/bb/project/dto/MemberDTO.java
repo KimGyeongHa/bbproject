@@ -18,6 +18,7 @@ public class MemberDTO {
 	private String birth;
 	private String pn;
 	private String nickname;
+
 	
 	
 }

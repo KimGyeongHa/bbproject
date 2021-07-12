@@ -12,7 +12,8 @@ public interface CsDAO {
 		public void insertOne(CsDTO dto);
 		public void updateOne(CsDTO dto);
 		public void deleteOne(int csno);
-		public ArrayList<CsDTO> csselectAll(int csno);
+		public CsDTO selectOne(int csno);
 		public List<CsDTO> selectAll(int StartNum,int EndNum);
+		public int countAllData();
 
 }

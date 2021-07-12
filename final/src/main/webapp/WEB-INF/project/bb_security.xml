@@ -28,6 +28,10 @@
 			access="hasRole('ROLE_MEMBER')" />
 		<security:intercept-url pattern="/spring"
 			access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url pattern="/CsForm"
+			access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url pattern="/CsinsertForm"
+			access="hasRole('ROLE_MEMBER')" />
 			
 			
 			<!--로그인 설정??-->

@@ -8,12 +8,12 @@
   
   <insert id="insertOne" parameterType="trdedto">
   	INSERT INTO trinfodetail
-  	VALUES (TRINFO_DETAIL_BNO_SEQ.NEXTVAL, #{cost},#{park},#{inqu}, #{conv}, #{holi}, #{etc})
+  	VALUES (TRINFO_DETAIL_BNO_SEQ.NEXTVAL, #{cost},#{park},#{inqu}, #{conv}, #{holi}, #{etc}, #{loc}, #{adrs},#{trdetail},#{hp},#{time},'')
   </insert>
   
   <update id="updateOne" parameterType="trdedto">
   	UPDATE trinfodetail
-  	SET cost = #{cost} , park = #{park}, inqu = #{inqu} ,conv= #{conv} ,holi = #{holi}, etc = #{etc}
+  	SET cost = #{cost} , park = #{park}, inqu = #{inqu} ,conv= #{conv} ,holi = #{holi}, etc = #{etc}, loc= #{loc}, adrs= #{adrs}, trdetail = #{trdetail}
   	WHERE bno = #{bno}
   </update>
   

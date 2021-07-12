@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Summer</title>
+<title>Spring</title>
 <style>
 	
 	.test-class {
@@ -26,6 +28,7 @@
 </head>
 <body>
 	<div>
+		
 		<header class="site-navbar py-3" role="banner">
 
 			<div class="col-6 col-xl-2" data-aos="fade-down">
@@ -63,7 +66,9 @@
 					</div>
 
 					<div class="col-6 col-xl-2 text-right" data-aos="fade-down">
-						<div class="d-none d-xl-inline-block"></div>
+						<div class="d-none d-xl-inline-block">
+							
+						</div>
 
 						<div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3"
 							style="position: relative; top: 3px;">
@@ -79,128 +84,66 @@
 		</header>
 	</div>
 
-	<div class="container-fluid" data-aos="fade" data-aos-delay="500">
-		<div class="row">
-			<div class="col-lg-4 test-class border">
-
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer1</h2>
-						<a href="summer1" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer1.jpg" width="700" height="500" alt="Image"
-						class="img-fluid">
-				</div>
-
-			</div>
-			<div class="col-lg-4 test-class border" >
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer2</h2>
-						<a href="summer2" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer2.jpg" width="700" height="500" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-			<div class="col-lg-4 test-class border">
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer3</h2>
-						<a href="summer3" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer3.jpg" width=700 height="500" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-
-			<div class="col-lg-4 test-class border">
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer4</h2>
-						<a href="summer4" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer4.jpg" width=700 height="500" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-
-			<div class="col-lg-4 test-class border">
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer5</h2>
-						<a href="summer5" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer5.jpg" width=700 height="500" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-
-			<div class="col-lg-4 test-class border">
-				<div class="image-wrap-2">
-					<div class="image-info">
-						<h2 class="mb-3">Summer6</h2>
-						<a href="summer6" class="btn btn-outline-white py-2 px-4">Go
-							In</a>
-					</div>
-					<img src="images/summer6.jpg" width=700 height="500" alt="Image"
-						class="img-fluid">
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="footer py-4">
-		<div class="container-fluid text-center">
-			<p>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;
-				<script data-cfasync="false"
-					src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-				<script>
-					document.write(new Date().getFullYear());
-				</script>
-				All rights reserved | This template is made with <i
-					class="icon-heart-o" aria-hidden="true"></i> by <a
-					href="https://colorlib.com" target="_blank">Colorlib</a>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</p>
-		</div>
-	</div>
 
 
 
+	   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+      <div class="row">
+       
+       
+       	<c:forEach var="dto" items="${list}">
+       <!-- 여름1 -->
+        <div class="col-lg-4 test-class border">
+          <div class="image-wrap-2">
+            <div class="image-info">
+              <h2 class="mb-3">여름</h2>
+              <a href="spring?type=2"></a>
+            </div>
+            <img src="${dto.trimg}" width="700" height="500" alt="Image" class="img-fluid" >
+            <p>${dto.trtitle}</p>
+          </div>
+        </div>
+      </c:forEach>
 
+      </div>
+    </div>
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/jquery.countdown.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/bootstrap-datepicker.min.js"></script>
-	<script src="js/swiper.min.js"></script>
-	<script src="js/aos.js"></script>
+    <div class="footer py-4">
+      <div class="container-fluid text-center">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+    </div>
 
-	<script src="js/picturefill.min.js"></script>
-	<script src="js/lightgallery-all.min.js"></script>
-	<script src="js/jquery.mousewheel.min.js"></script>
+   
+  
 
-	<script src="js/main.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('#lightgallery').lightGallery();
-		});
-	</script>
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
 </body>
 </html>

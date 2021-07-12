@@ -59,11 +59,10 @@
 
 
 			<tr>
-				<th>이미지</th>
+				<th>메인이미지</th>
 				<td><input type="file" name="file" id="" /></td>
 				<form:errors path="file" />
 			</tr>
-
 
 			<tr>
 				<th>이용가격</th>
@@ -99,7 +98,6 @@
 				<td colspan="2"><input type="submit" value="등록" /> <input
 					type="reset" value="초기화" /></td>
 			</tr>
-
 			<tr>
 		</table>
 	</form:form>

@@ -8,18 +8,18 @@
 
 	<insert id="insertOne" parameterType="trdto">
 		INSERT INTO trinfo
-		VALUES (TRINFO_BNO_SEQ.NEXTVAL,#{type},#{loc},#{trtitle},#{adrs},#{trdetail},#{hp},#{time},#{trimg},#{mno},0)
+		VALUES (TRINFO_BNO_SEQ.NEXTVAL,#{type},#{trtitle},#{trimg},#{mno},0,#{id})
 	</insert>
-
-	<select id="selectOne" parameterType="int" resultType="trdto">
-		SELECT bno,type,loc,trtitle,adrs,trdetail, hp, time, trimg, mno, hits
+	
+	<select id="selectOne" parameterType="String" resultType="trdto">
+		SELECT bno,type,trtitle, trimg, mno, hits, id
 		FROM trinfo
-		WHERE bno=#{bno}
+		WHERE id=#{id}
 	</select>
 
 	<update id="updateOne" parameterType="trdto">
 		UPDATE trinfo
-		SET trtitle=#{title}, trdetail=#{trdetail}, hp=#{hp}
+		SET trtitle=#{trtitle}
 		WHERE bno=#{bno}
 	</update>
 
@@ -34,6 +34,30 @@
 		WHERE bno=#{bno}
 	</update>
 
+	 <select id="getData" parameterType="int" resultType="int">
+  		SELECT count(*)
+  		FROM trinfo
+  		WHERE type = #{type}  		
+  	</select>
+  	
+  	<select id="selecttrinfo" parameterType="pgn" resultType="trdto">
+ SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
+ 	FROM (SELECT ROWNUM RN, BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
+ 		FROM (SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
+ 			FROM trinfo
+ 			ORDER BY bno desc)
+ 		WHERE ROWNUM &lt;= ${EndNum})
+ 	WHERE RN &gt;= ${StartNum}
+ </select>
+
+	<select id="selectAl" parameterType="int" resultType="trdto">
+		SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
+			FROM (SELECT ROWNUM RN, BNO, TYPE, TRTITLE, TRIMG, MNO ,HITS, ID
+				FROM (SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
+					FROM trinfo
+						ORDER BY BNO DESC)
+				WHERE type = ${type})
+	</select>
 
 
 </mapper>

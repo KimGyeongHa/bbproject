@@ -5,16 +5,35 @@
   
  <mapper namespace="bb.project.dao.CsDAO" >
  
+ <select id="getData" resultType="int">
+  		SELECT count(*)
+  		FROM CS  		
+  	</select>
+
  <select id="selectCs" parameterType="pgn" resultType="cdto">
- SELECT csno, mno, cstitle, cscontents, csrepdate, csimg
- 	FROM (SELECT ROWNUM RN, CSNO, MNO, CSTITLE, CSCONTENTS, CSREPDATE, CSIMG)
- 		FROM (SELECT CSNO, MNO, CSTITLE, CSCONTENTS, CSREPDATE, CSIMG)
+ SELECT CSNO, MNO, CSTITLE, CSCONTENTS, CSREPDATE, CSIMG
+ 	FROM (SELECT ROWNUM RN, CSNO, MNO, CSTITLE, CSCONTENTS, CSREPDATE, CSIMG
+ 		FROM (SELECT CSNO, MNO, CSTITLE, CSCONTENTS, CSREPDATE, CSIMG
  			FROM CS
- 			ORDER BY CS desc)
- 		WHERE ROWNUM $lt;= 20)
- 	WHERE RN $gt;= 11
- 
+ 			ORDER BY CSNO desc)
+ 		WHERE ROWNUM &lt;= ${EndNum})
+ 	WHERE RN &gt;= ${StartNum}
  </select>
+ 
+ 
+ <insert id="insertOne" parameterType="cdto">
+ 	INSERT INTO cs
+ 	VALUES (MEMBER_CS_CSNO_SEQ.NEXTVAL, #{mno}, #{cstitle}, #{cscontents},sysdate,#{csimg})
+ </insert>
+ 
+ 
+<select id="selectOne" parameterType="int" resultType="cdto">
+	SELECT csno, mno,cstitle,cscontents, csrepdate,csimg
+	FROM cs
+	WHERE csno=#{csno}
+
+
+</select>
  
  
  

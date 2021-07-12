@@ -2,6 +2,7 @@ package bb.project.dao;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import bb.project.dto.CsDTO;
 import bb.project.dto.MemberDTO;
@@ -12,13 +13,13 @@ public interface TrinfoDAO {
 	
 
 	// Trinfo 값 받아오는 DAO
-	public void selectOne(int bno);
+	public TrinfoDTO selectOne(String id);
 	public void insertOne(TrinfoDTO dto);
 	public void updateOne(TrinfoDTO dto);
 	public void deleteOne(int bno);
-	public ArrayList<TrinfoDTO> selectAll(int bno);
 	public void updatehits(int bno);
-	
-	
+	public List<TrinfoDTO> selectAll(int StartNum,int EndNum);
+	public int countAllData();
+	public List<TrinfoDTO> selecttype(int type);
 	
 }

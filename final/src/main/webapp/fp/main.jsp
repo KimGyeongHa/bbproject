@@ -3,7 +3,7 @@
  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>\
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
 <body>
 	
 	
-<h1>${dto.mno}</h1>
+
 	
   <div class="site-wrap">
 
@@ -47,7 +47,6 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-
 
 
     <header class="site-navbar py-3" role="banner">
@@ -96,18 +95,20 @@
 		</sec:authorize>
 		
 	
-		<sec:authorize access="isAuthenticated()">
-			<a href='<c:url value="/trinfotest" />' class="btn btn-outline-white py-2 px-4">게시물등록</a>
+		<sec:authorize access="permitAll()">
+			<a href='<c:url value="/Cslist" />' class="btn btn-outline-white py-2 px-4">고객센터</a>
 			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 			
 		</sec:authorize>
 		
+			<sec:authorize access="permitAll()">
+			<a href='<c:url value="/trinfotest" />' class="btn btn-outline-white py-2 px-4">여행지정보등록</a>
+			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+			
+		</sec:authorize>
 		
-		<sec:authorize access="isAnonymous()">
-	     <a href='<c:url value="/Login" />' class="btn btn-outline-white py-2 px-4">LOGIN</a>
-	      <a href="addmember" class="btn btn-outline-white py-2 px-4">SIGN UP!</a>
-	      </sec:authorize>
-	      
+	
+		
 		  </div>	
           <div class="col-6 col-xl-2 text-left" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
@@ -145,9 +146,9 @@
           <div class="image-wrap-2">
             <div class="image-info">
               <h2 class="mb-3">
-              <a href="spring" class="text-white h2 mb-0">
+              <a href="spring?type=1" class="text-white h2 mb-0">
               Spring</h2>
-              <a href="spring" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <a href="spring?type=1" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/spring.jpg" alt="Image" class="img-fluid">
           </div>
@@ -157,9 +158,9 @@
           <div class="image-wrap-2">
             <div class="image-info">
               <h2 class="mb-3">
-              <a href="summer" class="text-white h2 mb-0">
+              <a href="summer?type=2" class="text-white h2 mb-0">
               Summer</h2>
-              <a href="summer" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <a href="summer?type=2" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/summer.jpg" alt="Image" class="img-fluid">
           </div>
@@ -170,7 +171,7 @@
               <h2 class="mb-3">
               <a href="fall" class="text-white h2 mb-0">
               Fall</h2>
-              <a href="fall" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <a href="fall?type=3" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/fall.jpg" alt="Image" class="img-fluid">
           </div>
@@ -182,7 +183,7 @@
               <h2 class="mb-3">
               <a href="winter" class="text-white h2 mb-0">
               Winter</h2>
-              <a href="winter" class="btn btn-outline-white py-2 px-4">Go In</a>
+              <a href="winter?type=4" class="btn btn-outline-white py-2 px-4">Go In</a>
             </div>
             <img src="images/winter.jpg" alt="Image" class="img-fluid">
           </div>

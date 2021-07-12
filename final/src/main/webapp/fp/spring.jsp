@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Session</title>
+<title>Spring</title>
 <style>
 	
 	.test-class {
@@ -88,77 +90,25 @@
 	   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
       <div class="row">
        
-       
+      
        
        <!-- 봄1 -->
-        
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring1</h2>
-              <a href="spring1"></a>
-            </div>
-            <img src="images/spring1.jpg" width="700" height="500" alt="Image" class="img-fluid" >
-            <p>이것은 봄1이다</p>
-          </div>
-
-        </div>
-      
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring2</h2>
-              <a href="spring2" class="btn btn-outline-white py-2 px-4">Go In</a>
-            </div>
-            <img src="images/spring2.jpg" width="700" height="500" alt="Image" class="img-fluid">
-            <p>이것은 봄2이다</p>
-          </div>
-        </div>
-      
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring3</h2>
-              <a href="spring3" class="btn btn-outline-white py-2 px-4">Go In</a>
-            </div>
-            <img src="images/spring3.jpg" width="700" height="500" alt="Image" class="img-fluid">
-            <p>이것은 봄3이다</p>
-          </div>
-        </div>
-
-
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring4</h2>
-              <a href="spring4" class="btn btn-outline-white py-2 px-4">Go In</a>
-            </div>
-            <img src="images/spring4.jpg" width=700 height="500" alt="Image" class="img-fluid">
-          </div>
-        </div>
-
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring5</h2>
-              <a href="spring5" class="btn btn-outline-white py-2 px-4">Go In</a>
-            </div>
-            <img src="images/spring5.jpg" width=700 height="500" alt="Image" class="img-fluid">
-          </div>
-        </div>
-
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">Spring6</h2>
-              <a href="spring6" class="btn btn-outline-white py-2 px-4">Go In</a>
-            </div>
-            <img src="images/spring6.jpg" width=700 height="500" alt="Image" class="img-fluid" >
-          </div>
-        </div>
-
+ 
+      	<c:forEach var="dto" items="${list}">
+ 	
+	   <a href="springdetail">
+           <figure>
+            <img src="${dto.trimg}" width="700" height="500" alt="Image" class="img-fluid" >
+            <figcaption>
+            	<h3>${dto.trtitle}</h3>
+            </figcaption>
+            </figure>
+            </a>
+	    </c:forEach>	
       </div>
+      
     </div>
+
 
     <div class="footer py-4">
       <div class="container-fluid text-center">

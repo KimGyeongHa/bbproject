@@ -66,7 +66,6 @@ public class TrinfoController {
 		  
 		 session.setAttribute("dto", dto);
 	  
-		 System.out.println(dto.getMno());
 		
 		
 			return "trinfotest";
@@ -98,15 +97,9 @@ public class TrinfoController {
 		  
 		  File f = new File(filePath + "/"+fileName);
 		  
-		  dto1.setTrimg("/data/"+fileName);
-		  
-		  
-		  String id = pc.getName();
-		
-		  
-		 MemberDTO dto = ms.selectone(id);
-		  
-		 session.setAttribute("dto", dto);
+		  dto1.setTrimg("data/"+fileName);
+		  dto1.setId(pc.getName());
+
 		  
 		  
 		  tfs.insert(dto1);
@@ -114,7 +107,6 @@ public class TrinfoController {
 		  tfds.addtrdetail(dto2);
 		  
 		  
-		  System.out.println(dto.getMno());
 		  
 		  try {
 				mfile.transferTo(f);
@@ -128,7 +120,7 @@ public class TrinfoController {
 		  
 		  
 		  
-		  return "redirect:/main"; 
+		  return "forward:/main"; 
 	  }
 
 

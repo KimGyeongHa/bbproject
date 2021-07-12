@@ -1,6 +1,8 @@
 package bb.project.service;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,13 +21,7 @@ public class TrinfoServiceImple implements TrinfoService {
 	@Autowired
 	TrinfoDAO dao;
 	
-	@Override
-	public ArrayList<TrinfoDTO> readAll(int bno) {
-		
-		ArrayList<TrinfoDTO> list = dao.selectAll(bno);
-		
-		return list;
-	}
+	
 
 	@Override
 	public void update(TrinfoDTO dto) {
@@ -49,6 +45,26 @@ public class TrinfoServiceImple implements TrinfoService {
 	public void uphits(int bno) {
 		dao.updatehits(bno);
 		
+	}
+
+	@Override
+	public TrinfoDTO selectone(String id) {
+		return dao.selectOne(id);
+	}
+
+	@Override
+	public List<TrinfoDTO> selectinfo(int StartNum, int EndNum) {
+		return dao.selectAll(StartNum, EndNum);
+	}
+
+	@Override
+	public int alldata() {
+		return dao.countAllData();
+	}
+
+	@Override
+	public List<TrinfoDTO> selectAll(int type) {
+		return dao.selecttype(type);
 	}
 
 }

@@ -18,5 +18,11 @@ public class TrinfoDetailDTO {
 	private String conv;
 	private String holi;
 	private String etc;
+	private String loc;
+	private String adrs;
+	private String trdetail;
+	private String hp;
+	private String time;
+	private String trdeimg;
 
 }

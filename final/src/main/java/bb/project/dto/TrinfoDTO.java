@@ -15,14 +15,9 @@ import lombok.ToString;
 public class TrinfoDTO {
 	private int bno;
 	private int type;
-	private String loc;
 	private String trtitle;
-	private String adrs;
-	private String trdetail;
-	private String hp;
-	private String time;
 	private String trimg;
 	private int mno;
 	private int hits;
-
+	private String id;
 }

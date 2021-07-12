@@ -38,16 +38,22 @@ public class CsOracleDAO implements CsDAO  {
 		
 	}
 
-	@Override
-	public ArrayList<CsDTO> csselectAll(int csno) {
-		ArrayList<CsDTO> list = new ArrayList<CsDTO>(ss.selectList("bb.project.dao.CsDAO.selectAll", csno));
-		return list;
-	}
+	
 
 	@Override
 	public List<CsDTO> selectAll(int StartNum, int EndNum) {
 		PageNum pg = new PageNum(StartNum, EndNum);
-		return ss.selectList("bb.project.dao.CsDAO.selectAll",pg);
+		return ss.selectList("bb.project.dao.CsDAO.selectCs",pg);
+	}
+
+	@Override
+	public int countAllData() {
+		return ss.selectOne("bb.project.dao.CsDAO.getData");
+	}
+
+	@Override
+	public CsDTO selectOne(int csno) {
+		return ss.selectOne("bb.project.dao.CsDAO.selectOne",csno);
 	}
 
 }
