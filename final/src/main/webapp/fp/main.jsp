@@ -66,7 +66,7 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" >
                 <li class="active"><a href="main">Home</a></li>
                 <li class="has-children">
-                  <a href="single.html">Gallery</a>
+                  <a href="single.html">SEASON</a>
                   <ul class="dropdown">
                     <li><a href="spring">Spring</a></li>
                     <li><a href="summer">Summer</a></li>
@@ -76,8 +76,10 @@
                     <li><a href="best10">Best10</a></li>
                   </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
+                <sec:authorize access="isAuthenticated()">
+                <li><a href='<c:url value="/Cslist" />' >Services</a></li>
+                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+                </sec:authorize>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </nav>
@@ -87,10 +89,10 @@
 	    <!-- security 로그인시  --> 
 	      <h2><c:url value="${logout }"></c:url></h2>	
 		
-			<sec:authorize access="isAuthenticated()">
+		<sec:authorize access="isAuthenticated()">
 			<form action="<c:url value='/Logout' />" method="post">
 			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
-			<input type="submit" value="로그아웃" />	
+			<input style="background-color: black;" class="btn btn-outline-white py-2 px-4" type="submit" value="로그아웃" />	
 			</form>
 		</sec:authorize>
 		

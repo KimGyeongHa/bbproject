@@ -49,16 +49,6 @@ public class TrinfoOracleDAO implements TrinfoDAO {
 		
 	}
 
-	@Override
-	public List<TrinfoDTO> selectAll(int StartNum, int EndNum) {
-		PageNum pg = new PageNum(StartNum, EndNum);
-		return ss.selectList("bb.project.dao.TrinfoDAO.selecttrinfo",pg);
-	}
-
-	@Override
-	public int countAllData() {
-		return ss.selectOne("bb.project.dao.TrinfoDAO.getData");
-	}
 
 	@Override
 	public List<TrinfoDTO> selecttype(int type) {

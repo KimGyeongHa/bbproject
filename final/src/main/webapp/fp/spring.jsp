@@ -90,25 +90,25 @@
 	   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
       <div class="row">
        
-      
        
-       <!-- 봄1 -->
- 
-      	<c:forEach var="dto" items="${list}">
- 	
-	   <a href="springdetail">
-           <figure>
+       	<c:forEach var="dto" items="${list}">
+       <!-- 여름1 -->
+        <div class="col-lg-4 test-class border">
+          <div class="image-wrap-2">
+            <div class="image-info">
+              <h2 class="mb-3">여름</h2>
+              <a href="springdetail?type=1?bno=${dto.bno}"> </a>
+            </div>
+            <a href="springdetail?type=1?bno=${dto.bno}">
             <img src="${dto.trimg}" width="700" height="500" alt="Image" class="img-fluid" >
-            <figcaption>
-            	<h3>${dto.trtitle}</h3>
-            </figcaption>
-            </figure>
+            <p>${dto.trtitle}</p>
             </a>
-	    </c:forEach>	
-      </div>
-      
-    </div>
+          </div>
+        </div>
+      </c:forEach>
 
+      </div>
+    </div>
 
     <div class="footer py-4">
       <div class="container-fluid text-center">

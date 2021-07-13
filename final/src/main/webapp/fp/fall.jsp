@@ -30,7 +30,7 @@
 
 			<div class="col-6 col-xl-2" data-aos="fade-down">
 				<h1 class="mb-0">
-					<a href="main" class="text-white h2 mb-0"> <img
+					<a href="index.html" class="text-white h2 mb-0"> <img
 						src="images/AHDD2.jpg" alt="" />
 					</a>
 				</h1>
@@ -79,36 +79,100 @@
 		</header>
 	</div>
 
-	   <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-      <div class="row">
-       
-       
-       <!-- 가을1 -->
-        <c:forEach var="dto" items="${list}">
-        <div class="col-lg-4 test-class border">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3">가을</h2>
-              <a href="fall?type=3"> </a>
-            </div>
-            <a href="falldetail?type=3">
-            <img src="${dto.trimg}" width="700" height="500" alt="Image" class="img-fluid" >
-            <p>${dto.trtitle}</p>
-            </a>
-          </div>
-        </div>
-      </c:forEach>
+	<div class="container-fluid" data-aos="fade" data-aos-delay="500">
+		<div class="row">
+			<div class="col-lg-4 test-class border">
 
-    <div class="footer py-4">
-      <div class="container-fluid text-center">
-        <p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-      </div>
-    </div>
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall1</h2>
+						<a href="fall1" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall1.jpg" width="700" height="500" alt="Image"
+						class="img-fluid">
+				</div>
 
+			</div>
+			<div class="col-lg-4 test-class border">
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall2</h2>
+						<a href="fall2" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall2.jpg" width="700" height="500" alt="Image"
+						class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-4 test-class border">
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall3</h2>
+						<a href="fall3" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall3.jpg" width=700 height="500" alt="Image"
+						class="img-fluid">
+				</div>
+			</div>
+
+			<div class="col-lg-4 test-class border">
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall4</h2>
+						<a href="fall4" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall4.jpg" width=700 height="500" alt="Image"
+						class="img-fluid">
+				</div>
+			</div>
+
+			<div class="col-lg-4 test-class border">
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall5</h2>
+						<a href="fall5" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall5.jpg" width=700 height="500" alt="Image"
+						class="img-fluid">
+				</div>
+			</div>
+
+			<div class="col-lg-4 test-class border">
+				<div class="image-wrap-2">
+					<div class="image-info">
+						<h2 class="mb-3">Fall6</h2>
+						<a href="fall6" class="btn btn-outline-white py-2 px-4">Go
+							In</a>
+					</div>
+					<img src="images/fall6.jpg" width=700 height="500" alt="Image"
+						class="img-fluid">
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer py-4">
+		<div class="container-fluid text-center">
+			<p>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;
+				<script data-cfasync="false"
+					src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+				<script>
+					document.write(new Date().getFullYear());
+				</script>
+				All rights reserved | This template is made with <i
+					class="icon-heart-o" aria-hidden="true"></i> by <a
+					href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
+		</div>
+	</div>
 
 
 

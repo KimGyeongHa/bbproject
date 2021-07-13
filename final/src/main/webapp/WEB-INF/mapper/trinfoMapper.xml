@@ -34,21 +34,6 @@
 		WHERE bno=#{bno}
 	</update>
 
-	 <select id="getData" parameterType="int" resultType="int">
-  		SELECT count(*)
-  		FROM trinfo
-  		WHERE type = #{type}  		
-  	</select>
-  	
-  	<select id="selecttrinfo" parameterType="pgn" resultType="trdto">
- SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
- 	FROM (SELECT ROWNUM RN, BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
- 		FROM (SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID
- 			FROM trinfo
- 			ORDER BY bno desc)
- 		WHERE ROWNUM &lt;= ${EndNum})
- 	WHERE RN &gt;= ${StartNum}
- </select>
 
 	<select id="selectAl" parameterType="int" resultType="trdto">
 		SELECT BNO, TYPE, TRTITLE, TRIMG, MNO, HITS, ID

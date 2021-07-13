@@ -66,10 +66,6 @@ public class TestController {
 		return "insertForm";
 	}
 
-	@GetMapping("/test")
-	public String test1() {
-		return "test";
-	}
 
 	@PostMapping("/addmember")
 	public String insert(@ModelAttribute MemberDTO dto, MemberDetailDTO dto1, MemberAUTHDTO dto2) {
@@ -104,10 +100,9 @@ public class TestController {
 	  }
 	
 	  
-	  @RequestMapping("/spring")public String spring(Principal pc,HttpSession session,Model model, @RequestParam(name="currentPageNo",defaultValue="1")int currentPageNo) {
+	  @RequestMapping("/spring")
+	  public String spring(Principal pc,HttpSession session,Model model) {
 
-
-			
 		int type = 1;
 		
 		List<TrinfoDTO> list= tfs.selectAll(type);
@@ -117,9 +112,20 @@ public class TestController {
 		
 		
 	}
-	
 
-
+	  
+	  
+	  @RequestMapping("springdetail")
+	  public String springdetail() {
+		  
+		  
+		  
+		  
+		  
+		  return "springdetail";
+		  
+	  }
+	  
 	 
 	  @RequestMapping("/summer")public String summer(Principal pc,HttpSession session,Model model) {
 

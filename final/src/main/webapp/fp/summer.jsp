@@ -97,7 +97,7 @@
           <div class="image-wrap-2">
             <div class="image-info">
               <h2 class="mb-3">여름</h2>
-              <a href="spring?type=2"></a>
+              <a href="summer?type=2"></a>
             </div>
             <img src="${dto.trimg}" width="700" height="500" alt="Image" class="img-fluid" >
             <p>${dto.trtitle}</p>

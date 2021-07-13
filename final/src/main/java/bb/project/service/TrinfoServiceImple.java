@@ -47,24 +47,18 @@ public class TrinfoServiceImple implements TrinfoService {
 		
 	}
 
-	@Override
-	public TrinfoDTO selectone(String id) {
-		return dao.selectOne(id);
-	}
 
-	@Override
-	public List<TrinfoDTO> selectinfo(int StartNum, int EndNum) {
-		return dao.selectAll(StartNum, EndNum);
-	}
-
-	@Override
-	public int alldata() {
-		return dao.countAllData();
-	}
 
 	@Override
 	public List<TrinfoDTO> selectAll(int type) {
 		return dao.selecttype(type);
 	}
+
+	@Override
+	public TrinfoDTO selectone(String id) {
+
+		return dao.selectOne(id);
+	}
+
 
 }

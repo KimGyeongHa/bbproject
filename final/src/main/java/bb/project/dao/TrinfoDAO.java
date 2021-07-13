@@ -18,8 +18,6 @@ public interface TrinfoDAO {
 	public void updateOne(TrinfoDTO dto);
 	public void deleteOne(int bno);
 	public void updatehits(int bno);
-	public List<TrinfoDTO> selectAll(int StartNum,int EndNum);
-	public int countAllData();
 	public List<TrinfoDTO> selecttype(int type);
 	
 }

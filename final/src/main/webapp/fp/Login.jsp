@@ -29,7 +29,7 @@
 
 
 <body>
-<form>
+<form action="<c:url value='/login' />" method="post">
 	<table border="0" align="center" >	
 		<div class="site-section aos-init aos-animate" data-aos="fade" style="padding-bottom: 40px;">
 			<div class="container-fluid">
@@ -48,34 +48,29 @@
 								<h2>
 									<c:url value="${error }"></c:url>
 								</h2>
-								<h2>
-									<c:url value="${logout }"></c:url>
-								</h2>
+				
 
 								<!-- spring security : CSRF 공격을 막기위해 랜덤토큰 인증방식을제공 -->
 
-									<form action="<c:url value='/login' />" method="post">
 										<tr align="left" style="color: white;">
 											<th>ID  :</th>
-											<td><input type="text" name="id" id="" size="40"/></td>
+											<td><input type="text" name="username" id="" size="40"/></td>
 										</tr>
 										<tr style="color: white;">
 											<th style="width: 50px;">PW :</th>
-											<td><input type="password" name="pw" id="" size="40"/> <input
+											<td><input type="password" name="password" id="" size="40"/> 
+											<input
 												type="hidden" name="${_csrf.parameterName }"
 												value="${_csrf.token }" /></td>
 										</tr>
-								
-									
 										<tr align="left" style="height: 100px;">
 											<td>
 											<input style="background-color: black;"  type="submit" class="btn btn-outline-white py-2 px-4" value="LOGIN" size="10"/> 
-											<a href="register" class="btn btn-outline-white py-2 px-4">SIGN UP!</a>
+											<a href="addmember" class="btn btn-outline-white py-2 px-4">SIGN UP!</a>
 											</td>
 										</tr>
-									
-									
-							</div>
+								
+							</div>					
 						</div>
 					</div>
 				</div>
@@ -84,7 +79,7 @@
 	</table>
 </form>
 
-	<% 
+	<%
             // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
             // LoginPro.jsp에서 로그인 처리 결과에 따른 메시지를 보낸다.
             String msg=request.getParameter("msg");
@@ -99,7 +94,7 @@
                 out.println("<br>");
                 out.println("<font color='red' size='5'>아이디를 확인해 주세요.</font>");
             }
-        %>    
+        %>     
 
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
